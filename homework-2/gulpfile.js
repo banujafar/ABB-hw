@@ -56,6 +56,4 @@ gulp.task('watch', function () {
     gulp.watch('./src/js/*.js', gulp.series('minifyJs'))
 });
 
-// Default Gulp Task
-gulp.task('default', gulp.parallel('watch'));
 
