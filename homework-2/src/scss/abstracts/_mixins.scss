@@ -1,0 +1,52 @@
+@mixin flex($direction:row,$justifyContent:center,$alignItems:null) {
+ display:flex;
+  flex-direction: $direction;
+ justify-content:$justifyContent;
+ align-items: $alignItems;
+
+}
+
+@mixin space($type:margin,$direction:top,$size:null,$sizeAll:null,$sizeTwo:null){
+
+   @if($type==padding){
+      @if($sizeAll){
+         padding:$sizeAll;
+      }
+      @if($sizeTwo){
+         padding:$sizeTwo;
+      }
+    @if($direction==top){
+      padding-top:$size;
+    }
+    @else if($direction==right){
+      padding-right:$size;
+    }
+    @else if($direction==bottom){
+      padding-bottom:$size;
+    }
+    @else if($direction==left){
+      padding-left:$size;
+    }
+   }
+   @if($type==margin){
+      @if($sizeAll){
+         margin:$sizeAll;
+      }
+      @if($sizeTwo){
+         margin:$sizeTwo;
+      }
+      @if($direction==top){
+        margin-top:$size;
+      }
+      @else if($direction==right){
+        margin-right:$size;
+      }
+      @else if($direction==bottom){
+        margin-bottom:$size;
+      }
+      @else if($direction==left){
+        margin-left:$size;
+      }
+     }
+
+}
