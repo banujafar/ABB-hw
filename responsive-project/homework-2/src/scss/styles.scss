@@ -1,0 +1,21 @@
+@import "./abstracts/colors";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+@import "./layout/navbar";
+@import "./layout/main";
+@import "./layout/section";
+@import "./layout/footer";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: $white;
+}
