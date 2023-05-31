@@ -21,7 +21,8 @@ gulp.task("compileSass",function(){
     .pipe(concat('styles.min.css'))
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('dist/css')); 
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browsersync.stream())
 })
 
 // Convert Images
@@ -50,10 +51,20 @@ gulp.task('watch', function () {
       baseDir: '.',
     },
   });
-    gulp.watch('./src/scss/**/*.scss', gulp.series('compileSass',browsersync.reload));
-    gulp.watch('*.html', gulp.series('convertHtml'))
-    gulp.watch('./src/img/**/*', gulp.series('convertImages'))
-    gulp.watch('./src/js/*.js', gulp.series('minifyJs'))
+    gulp.watch('./src/scss/**/*.scss', gulp.series('compileSass')).on('change',browsersync.reload);
+    gulp.watch('*.html', gulp.series('convertHtml')).on('change',browsersync.reload)
+    gulp.watch('./src/img/**/*', gulp.series('convertImages')).on('change',browsersync.reload)
+    gulp.watch('./src/js/*.js', gulp.series('minifyJs')).on('change',browsersync.reload)
 });
+//gulp build
+gulp.task('build',gulp.series('convertHtml','compileSass','convertImages','minifyJs'));
+
+//gulp dev
+gulp.task('dev',gulp.series('watch'));;
+
+//default task
+
+gulp.task('default',gulp.series('dev'))
+
 
 
