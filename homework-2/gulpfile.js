@@ -7,12 +7,18 @@ const uglify=require("gulp-uglify")
 const browsersync = require('browser-sync').create();
 const cleanCSS = require('gulp-clean-css');
 const minify = require('gulp-minify');
- 
+ const clean=require('gulp-clean')
 //Copy all HTML files
 gulp.task('convertHtml', function () {
   return gulp.src('*.html')
     .pipe(gulp.dest('dist'));
 });
+
+ //Clean
+ gulp.task('clean',function(){
+  return gulp.src('dist',{allowEmpty:true,read:false})
+   .pipe(clean())
+ })
 
 // Compile Sass
 gulp.task("compileSass",function(){
@@ -57,7 +63,7 @@ gulp.task('watch', function () {
     gulp.watch('./src/js/*.js', gulp.series('minifyJs')).on('change',browsersync.reload)
 });
 //gulp build
-gulp.task('build',gulp.series('convertHtml','compileSass','convertImages','minifyJs'));
+gulp.task('build',gulp.series('clean','convertHtml','compileSass','convertImages','minifyJs'));
 
 //gulp dev
 gulp.task('dev',gulp.series('watch'));;
