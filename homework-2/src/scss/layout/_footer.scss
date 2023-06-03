@@ -1,18 +1,20 @@
+
 .footer {
   @include flex(
     $direction: column,
     $justifyContent: center,
     $alignItems: center
   );
-  height: 350px;
-  gap: 10px;
   background-color: $black;
-
+  padding-bottom: 39px;
   &__title {
     color: $footer-header-color;
     font-size: $font-size-m;
     text-transform: uppercase;
     text-align: center;
+    margin-top: 38px;
+    line-height: 22px;
+    margin-bottom: 8px;
   }
 
   &__content {
@@ -20,7 +22,8 @@
     font-size: $font-size-s;
     line-height: 20px;
     text-align: center;
-    width: 74%;
+    width: 303px;
+    margin: 0 auto 26px;
   }
 
   &__icons {
@@ -29,6 +32,7 @@
       $justifyContent: center,
       $alignItems: center
     );
+    margin-bottom: 25px;
   }
   &__icon {
     @include flex(
@@ -37,9 +41,9 @@
       $alignItems: center
     );
     border-radius: 50%;
-    @include space($type: padding, $sizeTwo: $space-xs-2 $space-sm-1);
-    height: auto;
-    @include space($type: margin, $direction: right, $size: $space-xs-1);
+    width: 34px;
+    height: 34px;
+   margin-right: 6px;
     position: relative;
     border: 2px solid;
   }
@@ -67,8 +71,41 @@
   &__contact {
     color: $footer-text-color;
     font-size: $font-size-m;
-    width: 70%;
+    width: 235px;
     text-align: center;
-    line-height: 24px;
+    line-height: 21px;
+    margin: 0 auto;
   }
+}
+@media screen and (min-width: $breakpoint-md) {
+  .footer{
+   padding-bottom: 56px;
+   &__title{
+     margin-top: 57px;
+     font-size: 16px;
+     margin-bottom: 22px;
+   }
+   &__content{
+     font-size: 16px;
+     line-height: 22px;
+     width: 684px;
+     margin-bottom: 37px;
+     &::after{
+       content: "Curabitur blandit tempus porttitor vollisky inceptos mollisestor.";
+     }
+   }
+   &__icons{
+     margin-bottom: 34px;
+   }
+   &__contact{
+     font-size: 16px;
+     line-height: 26px;
+     width: 613px;
+   }
+  }
+ }
+@media screen and (min-width: $breakpoint-lg) {
+ .footer{
+  padding-bottom: 70px;
+ }
 }

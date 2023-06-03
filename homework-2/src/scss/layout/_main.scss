@@ -1,8 +1,7 @@
+
+
 .main {
   @include flex($direction: column, $justifyContent: center, $alignItems: null);
-  @include space ($type:margin,$sizeTwo:$space-auto);
-  max-width: 1200px;
-  
 
   &__header {
     @include flex(
@@ -11,7 +10,7 @@
       $alignItems: center
     );
     @include space ($type:margin,$sizeTwo:$space-auto);
-    width: 90%;
+    width: 100%;
   }
 
   &__img {
@@ -20,8 +19,8 @@
     background-position: center;
     background-size: cover;
     object-fit: contain;
-    @include space ($type:margin,$direction:top,$size:$space-sm-2);
-    @include space ($type:margin,$direction:bottom,$size:$space-m);
+  margin-top: 23px;
+  margin-bottom: 38px;
  
   }
 
@@ -35,9 +34,10 @@
     // margin: 0 auto;
     &__title {
       color: $title-color;
-      font-size: $font-size-l;
-      @include space ($type:margin,$direction:bottom,$size:$space-sm-2);
-      @include space ($type:margin,$direction:left,$size:$space-xs-3);
+      font-size: $font-size-m;
+      font-weight: 700;
+      margin-bottom: 23px;
+      line-height: 22px;
     }
 
     &__content {
@@ -46,8 +46,8 @@
         $justifyContent: center,
         $alignItems: flex-start
       );
-      @include space ($type:margin,$sizeTwo:$space-auto);
-      width: 90%;
+     
+      width: 100%;
      
     }
     
@@ -59,29 +59,29 @@
           $justifyContent: center,
           $alignItems: flex-start
         );
-        
-      @include space ($type:margin,$direction:bottom,$size:$space-sm-3);
-
+      &--mt{
+        margin-top: 28.5px;
+      }
         &--disabled {
           display: none;
         }
 
         &__image {
           
-      @include space ($type:margin,$direction:bottom,$size:$space-sm-1);
+     margin-bottom: 11px;
         }
 
         &__title {
           font-size: $font-size-m;
           font-weight: 700;
+          line-height: 30px;
           color: $title-color;
-         
-      @include space ($type:margin,$direction:bottom,$size:$space-xs-1);
         }
 
         &__text {
           color: $post-text-color;
           font-size: $font-size-xs;
+          line-height: 16px;
         }
 
         &__info--disabled {
@@ -100,40 +100,49 @@
 @media screen and (min-width: $breakpoint-md) {
   .main {
 
-    &__img {
-      
-      @include space ($type:margin,$direction:top,$size:$space-m);
-      @include space ($type:margin,$direction:bottom,$size:$space-xl);
+    &__img {margin-top: 0;
+      margin-bottom: 56px;
      
     }
 
     .posts {
-
+      &__title{
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
       &__column {
 
         .post {
           @include flex(
             $direction: row,
             $justifyContent: flex-start,
-            $alignItems: center
+            $alignItems: flex-start
           );
-          
-      @include space ($type:margin,$direction:bottom,$size:$space-sm-3);
+          &:not(:first-child){
+            margin-top: 32px;
+          }
+      &__image{
+        margin-bottom: 0;
+      }
+      &__text{
+        font-size: 12px;
+        line-height: 20px;
+      }
           &--disabled {
             @include flex(
               $direction: row,
               $justifyContent: flex-start,
-              $alignItems: center
+              $alignItems: flex-start
             );
           }
 
           &__content {
-            
-      @include space ($type:margin,$direction:left,$size:$space-sm-2);
+            margin-left: 21px;
           }
 
           &__info--disabled {
             display: block;
+            max-width: 404px;
           }
         }
       }
@@ -145,9 +154,8 @@
   .main {
 
     &__img {
-      
-      @include space ($type:margin,$direction:bottom,$size:$space-lg);     
-      @include space ($type:margin,$direction:bottom,$size:$space-xl);
+    margin-bottom: 66px;
+    margin-top: 0;
      
     }
 
@@ -159,8 +167,9 @@
           $justifyContent: center,
           $alignItems: null
         );
+        gap: 55px;
       }
-
+    
       &__column {
         @include flex(
           $direction: column,
@@ -170,6 +179,14 @@
 
         .post {
           flex-basis: 49%;
+          &--mt{
+            margin-top: 0;
+          }
+          
+         
+          &__info--disabled{
+            margin-top: 7px;
+          }
         }
       }
     }
