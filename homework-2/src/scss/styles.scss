@@ -19,3 +19,28 @@
 body{
     background-color: $white;
 }
+.container{
+    padding: 0 10px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+    .container{
+     
+       max-width:320px;
+    }
+     
+     }
+   
+
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+    .container{
+       max-width: 768px;
+    }
+     }
+@media screen and (min-width:993px) {
+        .container{
+           max-width: 1170px;
+        }
+         }
+  

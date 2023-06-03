@@ -11,105 +11,107 @@
 </head>
 
 <body>
-  
-  <!-- !Navbar for Desktop -->
-  <nav class="navbar-menu">
-    <ul class="navbar-menu__list">
-      <li class="navbar-menu__item"><a href="" class="navbar-menu__link--active">HOME</a></li>
-      <li class="navbar-menu__item"><a href="" class="navbar-menu__link">ABOUT US</a></li>
-      <li class="navbar-menu__item"><a href="" class="navbar-menu__link">OUR JOURNAL</a></li>
-      <li class="navbar-menu__item"><a href="" class="navbar-menu__link">PROJECTS</a></li>
-      <li class="navbar-menu__item"><a href="" class="navbar-menu__link">NEWS</a></li>
-      <li class="navbar-menu__item"><a href="" class="navbar-menu__link">FEATURES</a></li>
-      <li class="navbar-menu__item"><a href="" class="navbar-menu__link">CONTACT</a></li>
+  <div class="container">
+ <!-- !Navbar for Desktop -->
+ <nav class="navbar-menu">
+  <ul class="navbar-menu__list">
+    <li class="navbar-menu__item"><a href="" class="navbar-menu__link--active">HOME</a></li>
+    <li class="navbar-menu__item"><a href="" class="navbar-menu__link">ABOUT US</a></li>
+    <li class="navbar-menu__item"><a href="" class="navbar-menu__link">OUR JOURNAL</a></li>
+    <li class="navbar-menu__item"><a href="" class="navbar-menu__link">PROJECTS</a></li>
+    <li class="navbar-menu__item"><a href="" class="navbar-menu__link">NEWS</a></li>
+    <li class="navbar-menu__item"><a href="" class="navbar-menu__link">FEATURES</a></li>
+    <li class="navbar-menu__item"><a href="" class="navbar-menu__link">CONTACT</a></li>
+  </ul>
+</nav>
+
+<!-- !Navbar for Mobile -->
+<div class="burger">
+  <i id="menu-icon" class="fas fa-bars"></i>
+  <nav class="drop-menu">
+    <ul class="drop-menu__list">
+      <li class="drop-menu__item"><a href="" class="drop-menu__link--active">HOME</a></li>
+      <li class="drop-menu__item"><a href="" class="drop-menu__link">ABOUT US</a></li>
+      <li class="drop-menu__item"><a href="" class="drop-menu__link">OUR JOURNAL</a></li>
+      <li class="drop-menu__item"><a href="" class="drop-menu__link">PROJECTS</a></li>
+      <li class="drop-menu__item"><a href="" class="drop-menu__link">NEWS</a></li>
+      <li class="drop-menu__item"><a href="" class="drop-menu__link">FEATURES</a></li>
+      <li class="drop-menu__item"><a href="" class="drop-menu__link">CONTACT</a></li>
     </ul>
   </nav>
+</div>
 
-  <!-- !Navbar for Mobile -->
-  <div class="burger">
-    <i id="menu-icon" class="fas fa-bars"></i>
-    <nav class="drop-menu">
-      <ul class="drop-menu__list">
-        <li class="drop-menu__item"><a href="" class="drop-menu__link--active">HOME</a></li>
-        <li class="drop-menu__item"><a href="" class="drop-menu__link">ABOUT US</a></li>
-        <li class="drop-menu__item"><a href="" class="drop-menu__link">OUR JOURNAL</a></li>
-        <li class="drop-menu__item"><a href="" class="drop-menu__link">PROJECTS</a></li>
-        <li class="drop-menu__item"><a href="" class="drop-menu__link">NEWS</a></li>
-        <li class="drop-menu__item"><a href="" class="drop-menu__link">FEATURES</a></li>
-        <li class="drop-menu__item"><a href="" class="drop-menu__link">CONTACT</a></li>
-      </ul>
-    </nav>
+<!-- !Main starts here -->
+<main class="main">
+  <div class="main__header">
+    <img src="dist/img/header-img.png" class="main__img">
   </div>
 
-  <!-- !Main starts here -->
-  <main class="main">
-    <div class="main__header">
-      <img src="dist/img/header-img.png" class="main__img">
-    </div>
+  <!-- !Our Recent Posts -->
+  <div class="posts">
+    <h2 class="posts__title">- OUR RECENT POSTS</h2>
+    <div class="posts__content">
+      <!-- !First Column of posts -->
+      <div class="posts__column">
 
-    <!-- !Our Recent Posts -->
-    <div class="posts">
-      <h2 class="posts__title">- OUR RECENT POSTS</h2>
-      <div class="posts__content">
-        <!-- !First Column of posts -->
-        <div class="posts__column">
-
-          <!-- !Post 1  -->
-          <div class="post">
-            <img src="dist/img/posts/post1img 1.png" class="post__image">
-            <div class="post__content">
-              <h3 class="post__title">Aenean Adipiscing Etiam Vestibulum</h3>
-              <span class="post__text">Photography, Journal / 9 Comments</span>
-              <span class="post__info--disabled">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare
-                sem lacinia quam venenatis vestibulum.</span>
-            </div>
-          </div>
-
-          <!-- !Post 2 -->
-          <div class="post">
-            <img src="dist/img/posts/post2img 1.png" class="post__image">
-            <div class="post__content">
-              <h3 class="post__title">Aenean Adipiscing Etiam Vestibulum</h3>
-              <span class="post__text">Photography, Journal / 9 Comments</span>
-              <span class="post__info--disabled">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare
-                sem lacinia quam venenatis vestibulum.</span>
-            </div>
-            </img>
+        <!-- !Post 1  -->
+        <div class="post ">
+          <img src="dist/img/posts/post1img 1.png" class="post__image">
+          <div class="post__content">
+            <h3 class="post__title">Aenean Adipiscing Etiam Vestibulum</h3>
+            <p class="post__text">Photography, Journal&nbsp; &nbsp;/&nbsp;&nbsp;9 Comments</p>
+            <span class="post__info--disabled">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare
+              sem lacinia quam venenatis vestibulum.</span>
           </div>
         </div>
 
-        <!-- !Second Column of posts -->
-        <div class="posts__column">
-
-          <!--  !Post 3 -->
-          <div class="post">
-            <img src="dist/img/posts/post3img 1.png" class="post__image">
-            <div class="post__content">
-              <h3 class="post__title">Aenean Adipiscing Etiam Vestibulum</h3>
-              <span class="post__text">Photography, Journal / 9 Comments</span>
-              <span class="post__info--disabled">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare
-                sem lacinia quam venenatis vestibulum.</span>
-            </div>
+        <!-- !Post 2 -->
+        <div class="post post--mt">
+          <img src="dist/img/posts/post2img 1.png" class="post__image">
+          <div class="post__content">
+            <h3 class="post__title">Aenean Adipiscing Etiam Vestibulum</h3>
+            <p class="post__text">Photography, Journal&nbsp; &nbsp;/&nbsp;&nbsp;9 Comments</p>
+            <span class="post__info--disabled">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare
+              sem lacinia quam venenatis vestibulum.</span>
           </div>
+        </div>
+      </div>
 
-          <!-- !Post 4-->
-          <div class="post">
-            <img src="dist/img/posts/post4img 1.png" class="post__image">
-            <div class="post__content">
-              <h3 class="post__title">Aenean Adipiscing Etiam Vestibulum</h3>
-              <span class="post__text">Photography, Journal / 9 Comments</span>
-              <span class="post__info--disabled">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare
-                sem lacinia quam venenatis vestibulum.</span>
-            </div>
+      <!-- !Second Column of posts -->
+      <div class="posts__column">
+
+        <!--  !Post 3 -->
+        <div class="post post--mt">
+          <img src="dist/img/posts/post3img 1.png" class="post__image">
+          <div class="post__content">
+            <h3 class="post__title">Aenean Adipiscing Etiam Vestibulum</h3>
+            <p class="post__text">Photography, Journal&nbsp; &nbsp;/&nbsp;&nbsp;9 Comments</p>
+            <span class="post__info--disabled">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare
+              sem lacinia quam venenatis vestibulum.</span>
+          </div>
+        </div>
+
+        <!-- !Post 4-->
+        <div class="post post--disabled">
+          <img src="dist/img/posts/post4img 1.png" class="post__image">
+          <div class="post__content">
+            <h3 class="post__title">Aenean Adipiscing Etiam Vestibulum</h3>
+            <p class="post__text">Photography, Journal&nbsp; &nbsp;/&nbsp;&nbsp;9 Comments</p>
+            <span class="post__info--disabled">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare
+              sem lacinia quam venenatis vestibulum.</span>
           </div>
         </div>
       </div>
     </div>
-  </main>
-  <!-- !Main ends here -->
+  </div>
+</main>
+<!-- !Main ends here -->
 
+
+  </div>
   <!-- !Section Instagram shots start here -->
-  <section class="instagram">
+<section class="instagram">
+  <div class="container">
     <div class="instagram__content">
 
       <div class="shots">
@@ -123,19 +125,20 @@
           <img src="dist/img/shots/shot3.png" class="shots__image--disabled">
           <img src="dist/img/shots/shot4.png" class="shots__image--disabled">
         </div>
-
-
+  
+  
       </div>
     </div>
-  </section>
-  <!-- !Section Instagram shots start here -->
-
-  <!-- !Footer starts here -->
-  <footer class="footer">
+  </div>
+  
+</section>
+<!-- !Section Instagram shots start here -->
+<!-- !Footer starts here -->
+<footer class="footer">
+  <div class="container">
     <h2 class="footer__title">- get in touch with us -</h2>
     <p class="footer__content">Maecenas faucibus molli interdum. Cras mattis consectetur purus sitor amet sed donec
       malesuada ullamcorper odio.</p>
-
       <!-- !Footer icons -->
     <div class="footer__icons">
       <div class="footer__icon">
@@ -156,8 +159,10 @@
     </div>
     <p class="footer__contact"> Moonshine St. 14-05 Light City&emsp;/&ensp;T. +00 (123) 456 78
       90&ensp;/&emsp;first.last@email.com</p>
-  </footer>
-  <!-- !Footer ends here -->
+  </div>
+ 
+</footer>
+<!-- !Footer ends here -->
 
   <script src="dist/js/scripts-min.js"></script>
 </body>

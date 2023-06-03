@@ -1,16 +1,17 @@
+
 ul li a {
   color: $title-color;
+  letter-spacing: 0.1rem;
 }
 
 .navbar-menu {
-  @include space($type: margin, $direction: top, $size: $space-sm-2);
-
+  margin-top: 23px;
   &__list {
     display: none;
   }
   &__item {
-    @include space($type: padding, $sizeAll: $space-xs-2);
-
+   padding: 16px 0 17px;
+   line-height: 22px;
     &:hover {
       cursor: pointer;
       background-color: $list-hover;
@@ -29,13 +30,18 @@ ul li a {
   );
   cursor: pointer;
   position: relative;
-  width: 90%;
+  width: 100%;
 
   @include space($type: margin, $sizeTwo: $space-auto);
 
   #menu-icon {
+    @include flex( $direction: row,
+    $justifyContent: center,
+    $alignItems: center
+  );
     background-color: $black;
-    @include space($type: padding, $sizeTwo: $space-xs-2 $space-sm-1);
+    width: 44px;
+    height: 37px;
     color: $white;
     font-size: $font-size-xl;
   }
@@ -82,6 +88,8 @@ ul li a {
   }
 
   .navbar-menu {
+    margin-top: 23px;
+    margin-bottom: 28px;
     &__list {
       @include flex(
         $direction: row,
@@ -92,15 +100,21 @@ ul li a {
     }
 
     &__item:not(:last-child) {
-      @include space($type: margin, $direction: right, $size: $space-sm-1);
+      margin-right: 34px;
     }
   }
 }
 
 @media screen and (min-width: $breakpoint-lg) {
   .navbar-menu {
-    &__item:not(:last-child) {
-      @include space($type: margin, $direction: right, $size: $space-m);
+    margin-top: 29px;
+    margin-bottom: 34px;
+    &__item{
+      
+      &:not(:last-child) {
+        margin-right: 68px;
+       }
     }
+    
   }
 }
