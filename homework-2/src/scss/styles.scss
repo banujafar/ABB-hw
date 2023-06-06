@@ -5,42 +5,40 @@
 @import "./layout/main";
 @import "./layout/section";
 @import "./layout/footer";
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto";
-    text-decoration: none;
-    list-style: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  text-decoration: none;
+  list-style: none;
 }
 
-body{
-    background-color: $white;
+body {
+  background-color: $white;
 }
-.container{
-    padding: 0 10px;
-    margin: 0 auto;
+
+.container {
+  padding: 0 10px;
+  margin: 0 auto;
 }
+
 @media screen and (max-width: 480px) {
-    .container{
-     
-       max-width:320px;
-    }
-     
-     }
-   
-
+  .container {
+    max-width: 320px;
+  }
+}
 
 @media screen and (min-width: 481px) and (max-width: 992px) {
-    .container{
-       max-width: 768px;
-    }
-     }
-@media screen and (min-width:993px) {
-        .container{
-           max-width: 1170px;
-        }
-         }
-  
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .container {
+    max-width: 1170px;
+  }
+}
