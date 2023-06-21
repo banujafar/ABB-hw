@@ -41,14 +41,7 @@ catch(err){
 
 We didn't define getData function so it gave error
 */
-try{
-    getData()
-    }
-catch(err){
-        console.table(err)//Reference error
-     }
 
-     
 const books = [
     {
         author: "Lucy Foley",
@@ -66,7 +59,7 @@ const books = [
     {
         author: "Alan Moore",
         name: "Neonomicon",
-        price: 70
+        price: 70,
     },
     {
         author: "Terry Pratchett",
@@ -78,33 +71,35 @@ const books = [
         name: "Cats in Art",
     }
 ];
-const root = document.querySelector('#root');
-
+function createBookList() {
+    let bookFields = [];
     for (let book of books) {
+        bookFields = [...bookFields, ...Object.keys(book)];
+    }
+    console.log(bookFields)
+    return Array.from(new Set(bookFields));
+}
+
+function validateBook() {
+    const arrayOfProperties = createBookList();
+    const root = document.querySelector('#root');
+    for (let book of books) {
+        const missingProperties = arrayOfProperties.filter(property => !Object.keys(book).includes(property));
         try {
-            const list = document.createElement('ul');
-            root.appendChild(list)
-            if ('price' in book && 'name' in book && 'author' in book) {
-                const bookKeys=Object.keys(book);
-                const bookValues=Object.values(book)
-                for (let i = 0; i < bookKeys.length; i++) {
-                    console.log(book);
-                    const item = document.createElement('li')
-                    // console.log(Object.keys(book));
-                    list.appendChild(item).textContent = `
-                    ${bookKeys[i]}:${bookValues[i]}
-                    `
-                }
+            if (missingProperties.length === 0) {
+                const list = document.createElement('ul');
+                root.appendChild(list);
+                Object.entries(book).map((key) => {
+                    const item = document.createElement('li');
+                    item.textContent = `${key[0]}: ${key[1]} `;
+                    list.appendChild(item);
+                })
+            } else {
+                throw new Error(`Missing property in the book object: ${missingProperties}`);
             }
-            else {
-                //console.log(Object.keys(books[0]));
-                const missingProperties = ['author', 'name', 'price'].filter(property => !(property in book));
-                throw new Error(`Missing property in the book object,${missingProperties}`);
-            }
-        }
-        catch (err) {
-            console.error(err)
+        } catch (err) {
+            console.error(err);
         }
     }
-
-
+}
+validateBook();
