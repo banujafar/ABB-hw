@@ -1,3 +1,8 @@
+/*
+Theoretical Question
+Explain in your own words what AJAX is and how it is useful in JavaScript development.
+AJAX -Asynchronous Javascript and XML allows us to request data from web servers from dynamically.Let's imagine we have an application and when user or developer click button it should be displayed movies list (like below code).in this example client or developer sent HTTP request to the web server which has the data which we want to receive (request type can be get (retrive data from web server or post(send data to the server) etc)).The communication happens with AJAX calls.
+*/
 const root = document.querySelector("#root")
 // Function to display loading animation
 const displayLoading = (parentElement) => {
