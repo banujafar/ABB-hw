@@ -1,0 +1,195 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: bisque;
+}
+.card-container{
+     width: 620px;
+     margin: 30px auto;
+     padding: 10px;
+     position: relative;
+}
+.card{   
+    background: #fff;
+    margin-top: 10px;
+    padding: 35px;
+    border: 1px solid #000;
+    position: relative;
+}
+
+button{
+    position: absolute;   
+    padding: 5px;
+    cursor: pointer;   
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.delete{ 
+    background-color: red;
+    right: 5px;
+    bottom: 5px;
+}
+.send{
+    background: green;
+   right: 10px;
+    top: -10px;
+}
+.card-header{
+    background: #fff;
+}
+.user-profile{
+    height: 50px;
+    width: 50px;
+    background: #000;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 20px;
+}
+.card-profile{
+    width: 50px;
+    height: 50px;
+    border-radius:50% ;
+    background-color: #000;
+}
+
+/* Animation */
+.loader {
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+  span {
+    display: block;
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    -webkit-animation: run 2s infinite ease-in-out;
+    animation: run 2s infinite ease-in-out;
+  }
+  
+  span:nth-child(1) {
+    background: #f3b222;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+  }
+  span:nth-child(2) {
+    background: #f0653e;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  span:nth-child(3) {
+    background: #b9c0c0;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  span:nth-child(4) {
+    background: #8f7473;
+  }
+  
+  @-webkit-keyframes run {
+    0% {
+      transform: translate(0%);
+      border-radius: 50%;
+    }
+    25% {
+      transform: translate(150%) scale(0.5);
+      border-radius: 0%;
+    }
+    50% {
+      transform: translate(150%, 150%);
+      border-radius: 50%;
+    }
+    75% {
+      transform: translate(0%, 150%) scale(0.5);
+      border-radius: 0%;
+    }
+  }
+  @keyframes run {
+    0% {
+      transform: translate(0%);
+      border-radius: 50%;
+    }
+    25% {
+      transform: translate(150%) scale(0.5);
+      border-radius: 0%;
+    }
+    50% {
+      transform: translate(150%, 150%);
+      border-radius: 50%;
+    }
+    75% {
+      transform: translate(0%, 150%) scale(0.5);
+      border-radius: 0%;
+    }
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+  }
+  
+  .close {
+    color: #aaa;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #000;
+  }
+  
