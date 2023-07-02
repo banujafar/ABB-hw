@@ -60,6 +60,28 @@ const sendPost = (userId, title, body) => {
         .then(data => data);
 };
 
+//Edit post
+const editPost = (postId, userId, title, body) => {
+    return fetch(`https://ajax.test-danit.com/api/json/posts/${postId}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            userId: userId,
+            title: title,
+            body: body
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Failed to update post.');
+        })
+        .catch(error => console.log(error));
+};
+displayLoading(root);
 class Card {
     constructor(title, text, userName, userEmail, userUserName) {
         this.title = title;
@@ -73,9 +95,11 @@ class Card {
         const card = document.createElement('div');
 
         const cardTitle = document.createElement('h2');
+        cardTitle.classList.add('card-title')
         cardTitle.textContent = this.title;
 
         const cardBody = document.createElement('p');
+        cardBody.classList.add('card-body')
         cardBody.textContent = this.text;
 
         const cardHeader = document.createElement('div');
@@ -94,11 +118,15 @@ class Card {
         userNameElement.textContent = this.userName;
 
         const userUsername = document.createElement('p');
-        userUsername.textContent = `@${this.userUserName}`;
+        userUsername.textContent = `${this.userEmail}`;
 
         const delButton = document.createElement('button');
         delButton.classList.add('delete')
-        delButton.textContent = `Delete post`;
+        delButton.innerHTML = '<i class="fas fa-trash"></i>';
+
+        const editButton = document.createElement('button');
+        editButton.classList.add('edit');
+        editButton.innerHTML = '<i class="fas fa-pen"></i>'
 
         userInfo.appendChild(userNameElement);
         userInfo.appendChild(userUsername);
@@ -112,6 +140,7 @@ class Card {
         card.appendChild(cardTitle);
         card.appendChild(cardBody);
         card.appendChild(delButton);
+        card.appendChild(editButton);
 
         return card;
     }
@@ -124,8 +153,12 @@ modal.classList.add('modal');
 // Create modal content
 const modalContent = document.createElement('div');
 modalContent.classList.add('modal-content');
+
 const title = document.createElement('input');
+title.classList.add('input-title')
 const body = document.createElement('input');
+body.classList.add('input-body')
+
 const sendBtn = document.createElement('button');
 // Create close button
 const closeButton = document.createElement('div');
@@ -180,6 +213,31 @@ Promise.all([fetchUsers(), fetchPosts()])
                         deletePost(post.id);
                         cardElement.remove();
                     });
+                    const editButton = cardElement.querySelector('.edit');
+                    editButton.addEventListener('click', () => {
+                        openModal();
+                        // Set the input values to the existing post's data
+
+
+                        const updatePostHandler = () => {
+                            const inputTitle = document.querySelector('.input-title');
+                            const inputBody = document.querySelector('.input-body');
+                            console.log(inputTitle.value)
+                            editPost(post.id, user.id, inputTitle.value, inputBody.value)
+                                .then(data => {
+                                    // Update the card with the new post data
+                                    cardElement.querySelector('.card-title').textContent = data.title;
+                                    cardElement.querySelector('.card-body').textContent = data.body;
+                                    closeModal();
+                                    // Remove the event listener after it has been used once
+                                    sendBtn.removeEventListener('click', updatePostHandler);
+                                })
+                                .catch(error => console.error(error));
+                        };
+
+                        sendBtn.addEventListener('click', updatePostHandler);
+                    });
+
                 }
             });
 
