@@ -31,7 +31,7 @@ const fetchUsers = () => {
 // Fetch posts
 const fetchPosts = () => {
     return fetch('https://ajax.test-danit.com/api/json/posts')
-        .then(res => res.json())
+        .then(res =>res.json())
         .catch(err => console.log(err));
 };
 
@@ -189,9 +189,16 @@ closeButton.addEventListener('click', closeModal);
 
 // Append modal to the document body
 root.appendChild(modal);
-
+// async function init(){
+//    const users= await fetchUsers();
+//     const posts=await fetchPosts();
+//     hideLoading(root);
+//     return [users,posts]
+       
+// }
+//init().then(res => console.log(res)).catch(err => console.log(err));
 // Display data as Card
-Promise.all([fetchUsers(), fetchPosts()])
+Promise.all([fetchUsers(),fetchPosts()])
     .then(([users, posts]) => {
         hideLoading(root);
         users.forEach(user => {
@@ -217,8 +224,6 @@ Promise.all([fetchUsers(), fetchPosts()])
                     editButton.addEventListener('click', () => {
                         openModal();
                         // Set the input values to the existing post's data
-
-
                         const updatePostHandler = () => {
                             const inputTitle = document.querySelector('.input-title');
                             const inputBody = document.querySelector('.input-body');
